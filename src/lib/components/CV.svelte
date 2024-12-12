@@ -243,10 +243,10 @@
   
   <div class="export-button">
     <button on:click={exportToPDF}>
+      <span class="icon">📥</span>
       Скачать PDF
     </button>
   </div>
-  
 
   <div class="resume-container">
     <div class="resume">
@@ -546,6 +546,49 @@
       font-family: 'Roboto', sans-serif;
     }
 
+    .export-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    button {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+
+    @media print {
+      .export-button {
+        display: none;
+      }
+    }
+    
     .specialization {
         /* padding: 2rem; */
     }
